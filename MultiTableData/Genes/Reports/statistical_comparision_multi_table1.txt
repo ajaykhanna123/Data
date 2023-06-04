@@ -1,0 +1,108 @@
+Test for Complex
+H0: The two distributions are same
+H1: The two distributions are different
+Chi Square statistic: 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for Class
+H0: The two distributions are same
+H1: The two distributions are different
+Chi Square statistic: 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for Localization
+H0: The two distributions are same
+H1: The two distributions are different
+Chi Square statistic: 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for Phenotype
+H0: The two distributions are same
+H1: The two distributions are different
+Chi Square statistic: 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for add_numerical
+H0: The two distributions are same
+H1: The two distributions are different
+KS Test Statistic : 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for Chromosome
+H0: The two distributions are same
+H1: The two distributions are different
+KS Test Statistic : 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for Localization
+H0: The two distributions are same
+H1: The two distributions are different
+Chi Square statistic: 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for sum(Expression_Corr)
+H0: The two distributions are same
+H1: The two distributions are different
+KS Test Statistic : 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for max(Expression_Corr)
+H0: The two distributions are same
+H1: The two distributions are different
+KS Test Statistic : 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for min(Expression_Corr)
+H0: The two distributions are same
+H1: The two distributions are different
+KS Test Statistic : 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for nb_rows_in_Genes
+H0: The two distributions are same
+H1: The two distributions are different
+KS Test Statistic : 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for nb_rows_in_Interactions
+H0: The two distributions are same
+H1: The two distributions are different
+KS Test Statistic : 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for Complex
+H0: The two distributions are same
+H1: The two distributions are different
+Chi Square statistic: 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for Class
+H0: The two distributions are same
+H1: The two distributions are different
+Chi Square statistic: 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for Localization
+H0: The two distributions are same
+H1: The two distributions are different
+Chi Square statistic: 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for Phenotype
+H0: The two distributions are same
+H1: The two distributions are different
+Chi Square statistic: 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for add_numerical
+H0: The two distributions are same
+H1: The two distributions are different
+KS Test Statistic : 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for Chromosome
+H0: The two distributions are same
+H1: The two distributions are different
+KS Test Statistic : 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis

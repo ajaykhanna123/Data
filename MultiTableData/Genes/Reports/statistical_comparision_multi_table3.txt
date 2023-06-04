@@ -1,0 +1,18 @@
+Test for Type
+H0: The two distributions are same
+H1: The two distributions are different
+Chi Square statistic: 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for Expression_Corr
+H0: The two distributions are same
+H1: The two distributions are different
+KS Test Statistic : 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
+Test for add_numerical
+H0: The two distributions are same
+H1: The two distributions are different
+KS Test Statistic : 0.0
+Pvalue: 1.0
+Since,the p-value is greater than the specified level of significance,we fail to reject the null hypothesis
