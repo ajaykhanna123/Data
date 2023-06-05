@@ -1,0 +1,34 @@
+Classification Table
+
+GeneID : id
+nb_rows_in_Interactions : numerical
+sum(Expression_Corr) : numerical
+nb_rows_in_Genes : numerical
+max(Expression_Corr) : numerical
+Localization : categorical
+min(Expression_Corr) : numerical
+
+Genes:
+
+GeneID : id
+Function : categorical
+add_numerical : numerical
+Phenotype : categorical
+Essential : categorical
+Chromosome : numerical
+Complex : categorical
+Class : categorical
+Motif : categorical
+Localization : categorical
+
+Interactions:
+
+GeneID2 : id
+GeneID1_GeneID2 : id
+Type : categorical
+Expression_Corr : numerical
+add_numerical : numerical
+GeneID1 : id
+
+
+
