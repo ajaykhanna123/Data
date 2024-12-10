@@ -139,3 +139,45 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             f"An error occurred: {str(e)}",
             status_code=500
         )
+
+
+
+
+
+
+
+
+import tracemalloc
+import functools
+from datetime import datetime
+
+# Toggle for enabling/disabling memory profiling
+ENABLE_MEMORY_PROFILING = True
+
+def memory_profiler(func):
+    """
+    Decorator to profile memory usage before and after the function call using tracemalloc.
+    Works for both simple Python functions and Azure Functions.
+    """
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        if ENABLE_MEMORY_PROFILING:
+            # Start memory tracking
+            tracemalloc.start()
+            print(f"[{datetime.now()}] Memory profiling started for {func._name_}.")
+            
+            # Execute the function
+            result = func(*args, **kwargs)
+            
+            # Get memory usage stats
+            current, peak = tracemalloc.get_traced_memory()
+            print(f"[{datetime.now()}] Current memory usage: {current / (1024 * 1024):.2f} MB")
+            print(f"[{datetime.now()}] Peak memory usage: {peak / (1024 * 1024):.2f} MB")
+            
+            # Stop memory tracking
+            tracemalloc.stop()
+            return result
+        else:
+            # Execute the function without profiling if disabled
+            return func(*args, **kwargs)
+    return wrapper
