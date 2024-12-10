@@ -87,3 +87,55 @@ Deploy to Azure:
 
 
 This approach provides flexibility for memory profiling in Azure Functions with minimal overhead when disabled.
+
+
+
+import tracemalloc
+import functools
+from datetime import datetime
+import azure.functions as func
+
+# Memory profiler toggle
+ENABLE_MEMORY_PROFILING = True
+
+def memory_profiler(func):
+    """
+    Decorator to profile memory usage before and after the function call using tracemalloc.
+    """
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        if ENABLE_MEMORY_PROFILING:
+            tracemalloc.start()  # Start tracking memory
+            print(f"[{datetime.now()}] Memory profiling started for {func._name_}.")
+            
+            result = func(*args, **kwargs)  # Execute the function
+            
+            current, peak = tracemalloc.get_traced_memory()  # Get current and peak memory usage
+            print(f"[{datetime.now()}] Current memory usage: {current / (1024 * 1024):.2f} MB")
+            print(f"[{datetime.now()}] Peak memory usage: {peak / (1024 * 1024):.2f} MB")
+            
+            tracemalloc.stop()  # Stop tracking memory
+            return result
+        else:
+            return func(*args, **kwargs)
+    return wrapper
+
+# Azure Function Example
+@memory_profiler
+def main(req: func.HttpRequest) -> func.HttpResponse:
+    """
+    Example Azure HTTP Trigger function with memory profiling.
+    """
+    try:
+        # Simulate processing
+        data = [x*2 for x in range(10*6)]  # Simulate a large computation
+        
+        return func.HttpResponse(
+            "Memory profiling demo completed successfully!",
+            status_code=200
+        )
+    except Exception as e:
+        return func.HttpResponse(
+            f"An error occurred: {str(e)}",
+            status_code=500
+        )
