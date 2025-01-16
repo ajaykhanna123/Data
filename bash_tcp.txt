@@ -1,0 +1,6 @@
+grep -o '[0-9]\.[0-9] s' save_tcpping_traces.txt | while read -r line; do
+  value=$(echo $line | cut -d' ' -f1)
+  if (( $(echo "$value > 30" | bc -l) )); then
+    echo "$line"
+  fi
+done
