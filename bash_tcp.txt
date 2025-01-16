@@ -1,1 +1,10 @@
-awk '/Thu Jan/ {print $1, $2, $3, $4, $5, $6, $NF}' your_log_file.txt
+awk '
+{
+    if ($NF ~ /^[0-9]+\.[0-9]+ ms$/ && $NF+0 > 10) {
+        if (NR > 1) print last_line;  # Print the previous line if it exists
+        print;                        # Print the current line
+        getline;                      # Read the next line
+        print;                        # Print the next line
+    }
+    last_line = $0;                   # Store the current line as the last line
+}' your_log_file.txt
