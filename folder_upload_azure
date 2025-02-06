@@ -1,0 +1,31 @@
+import os
+from azure.storage.blob import BlobServiceClient
+
+# Azure Storage Account details
+STORAGE_ACCOUNT_NAME = "your_account_name"
+STORAGE_ACCOUNT_KEY = "your_account_key"
+CONTAINER_NAME = "your-container"
+LOCAL_FOLDER_PATH = "path/to/your/local/folder"
+
+# Construct connection string
+CONNECTION_STRING = f"DefaultEndpointsProtocol=https;AccountName={STORAGE_ACCOUNT_NAME};AccountKey={STORAGE_ACCOUNT_KEY};EndpointSuffix=core.windows.net"
+
+def upload_folder_to_blob(container_name, local_folder_path, overwrite=True):
+    """Upload all files from a local folder to Azure Blob Storage."""
+    blob_service_client = BlobServiceClient.from_connection_string(CONNECTION_STRING)
+    container_client = blob_service_client.get_container_client(container_name)
+
+    for root, _, files in os.walk(local_folder_path):
+        for file in files:
+            file_path = os.path.join(root, file)
+            blob_path = os.path.relpath(file_path, local_folder_path).replace("\\", "/")  # Keep relative path in blob
+
+            blob_client = container_client.get_blob_client(blob_path)
+
+            with open(file_path, "rb") as data:
+                blob_client.upload_blob(data, overwrite=overwrite)  # Overwrite existing files
+
+            print(f"Uploaded: {file_path} → {blob_path}")
+
+# Call the function
+upload_folder_to_blob(CONTAINER_NAME, LOCAL_FOLDER_PATH)
